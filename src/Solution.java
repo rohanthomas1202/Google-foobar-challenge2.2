@@ -4,12 +4,18 @@ import java.util.Queue;
 public class Solution {
     public static void main(String[] args) {
 
-        int start = 0;
-        int dest = 1;
+        int start = 19;
+        int dest = 19;
         System.out.println("The shortest path between " + start + " and " + dest + " is " + solution(start, dest));
     }
 
     public static int solution(int src, int dest) {
+
+        // if the knight is already at the destination
+        if (src == dest){
+            return 0;
+        }
+
         int shortest_path_distance = -1;
 
         Queue<Integer> queue = new LinkedList<>();
@@ -246,6 +252,9 @@ public class Solution {
             default:
 
 
+                /*
+                Use symmetry of chess board to group possible places knight can be at
+                 */
 
                 ///////////////////////////   17   ///////////////////////////
                 // check for values up two spaces and left one space
